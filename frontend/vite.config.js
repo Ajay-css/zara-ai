@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
   base: '/',
@@ -9,6 +8,8 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: false,
+    // 🔥 ADD THIS FOR BETTER CHUNKING
+    chunkSizeWarningLimit: 1000,
     rollupOptions: {
       output: {
         manualChunks: {
@@ -16,7 +17,11 @@ export default defineConfig({
           utils: ['framer-motion', 'gsap'],
           data: ['@tanstack/react-query'],
           ui: ['react-hot-toast', 'i18next', 'react-i18next']
-        }
+        },
+        // 🔥 ADD THIS FOR PROPER MODULE LOADING
+        entryFileNames: 'assets/[name]-[hash].js',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]'
       }
     }
   },

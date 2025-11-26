@@ -139,7 +139,7 @@
 }
 
 /* Input glass effect - FIXED (no backslash) */
-.bg-gray-800\\/30,
+.bg-gray-800\\\/30,
 .bg-gray-800\/30 {
   background: rgba(255, 255, 255, 0.05) !important;
   backdrop-filter: blur(20px) !important;
@@ -217,7 +217,7 @@
 }
 
 /* Mobile menu backdrop */
-.bg-gray-800\\/90 {
+.bg-gray-800\\\/90 {
   background: rgba(31, 41, 55, 0.95) !important;
   backdrop-filter: blur(20px) !important;
 }
