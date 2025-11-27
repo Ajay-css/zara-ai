@@ -129,8 +129,8 @@ const ChatMessage = ({ message, isTyping = false }) => {
                 return (
                   <div 
                     key={index}
-                    className="leading-relaxed whitespace-pre-wrap text-sm"
-                    style={{ lineHeight: '1.5' }}
+                    className="leading-relaxed whitespace-pre-wrap text-sm font-['Inter']"
+                    style={{ lineHeight: '2' }}
                   >
                     {part.content}
                     {showCursor && isTyping && index === messageParts.length - 1 && (
@@ -143,12 +143,12 @@ const ChatMessage = ({ message, isTyping = false }) => {
                   <div key={index} className="relative mt-2">
                     {/* Code Header */}
                     <div className="flex items-center justify-between bg-gray-900 px-3 py-2 rounded-t-lg border-b border-gray-700">
-                      <span className="text-xs text-gray-300 uppercase font-mono">
+                      <span className="text-xs text-gray-300 uppercase font-['Fira_Code']">
                         {part.language}
                       </span>
                       <button
                         onClick={() => copyToClipboard(part.content)}
-                        className="text-xs text-gray-400 hover:text-white transition-colors flex items-center space-x-1 px-2 py-1 rounded hover:bg-gray-800"
+                        className="text-xs text-gray-400 hover:text-white transition-colors flex items-center space-x-1 px-2 py-1 rounded hover:bg-gray-800 font-['Outfit']"
                       >
                         {copied ? (
                           <>
@@ -176,9 +176,15 @@ const ChatMessage = ({ message, isTyping = false }) => {
                         margin: 0,
                         borderRadius: '0 0 8px 8px',
                         fontSize: '12px',
-                        lineHeight: '1.3'
+                        lineHeight: '1.3',
+                        fontFamily: "'Fira Code', monospace"
                       }}
                       showLineNumbers={part.content.split('\n').length > 5}
+                      codeTagProps={{
+                        style: {
+                          fontFamily: "'Fira Code', monospace"
+                        }
+                      }}
                     >
                       {part.content}
                     </SyntaxHighlighter>

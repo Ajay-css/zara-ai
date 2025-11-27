@@ -1,4 +1,6 @@
+/* Add these font families */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -58,6 +60,24 @@
   .send-btn:disabled {
     background: #666 !important;
     cursor: not-allowed !important;
+  }
+
+  /* Hamburger menu styles */
+  .hamburger-menu {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 50;
+    background: #374151;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    transition: background-color 0.2s;
+  }
+
+  .hamburger-menu:hover {
+    background: #4B5563;
   }
 }
 
@@ -138,7 +158,7 @@
   background: transparent !important;
 }
 
-/* Input glass effect - FIXED (no backslash) */
+/* Input glass effect */
 .bg-gray-800\\\/30,
 .bg-gray-800\/30 {
   background: rgba(255, 255, 255, 0.05) !important;
@@ -220,4 +240,21 @@
 .bg-gray-800\\\/90 {
   background: rgba(31, 41, 55, 0.95) !important;
   backdrop-filter: blur(20px) !important;
+}
+
+/* Normal text - Outfit font */
+.font-['Inter'] {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Code text - Fira Code font */
+.font-['Fira_Code'] {
+  font-family: 'Fira Code', monospace;
+}
+
+/* Sidebar animation fixes */
+@media (max-width: 1023px) {
+  .fixed {
+    z-index: 40;
+  }
 }
